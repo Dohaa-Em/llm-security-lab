@@ -1,0 +1,37 @@
+# Target 1: native LLM interface (Open WebUI) talking to Ollama (phi3:mini)
+# Replace <OLLAMA_HOST_IP> with the machine running Ollama.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open-webui          # name of the Deployment resource
+spec:
+  replicas: 1               # number of pods
+  selector:                 # how the Deployment finds its pods
+    matchLabels:
+      app: open-webui
+  template:                 # pod template
+    metadata:
+      labels:
+        app: open-webui     # must match matchLabels
+    spec:
+      containers:
+      - name: open-webui
+        image: ghcr.io/open-webui/open-webui:main
+        ports:
+        - containerPort: 8080          # internal container port
+        env:                           # so Open WebUI can reach Ollama
+        - name: OLLAMA_BASE_URL
+          value: "http://<OLLAMA_HOST_IP>:11434"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: open-webui-service
+spec:
+  selector:
+    app: open-webui
+  ports:
+  - port: 3000              # Service port inside the cluster
+    targetPort: 8080        # container port where Open WebUI listens
+    nodePort: 30000         # port on the Ubuntu VM (external access)
+  type: NodePort
