@@ -1,10 +1,13 @@
 # Demonstration videos
 
-| Video | Content | Link |
-|---|---|---|
-| `DOS.mkv` | [TO COMPLETE: DoS attack on target 1 (LLM10)] | [paste link] |
-| `LLM_demo.mp4` | [TO COMPLETE] | [paste link] |
-| `Prompt_Final.mp4` | [TO COMPLETE] | [paste link] |
+All demonstration videos are in this Google Drive folder:
 
-Host the videos on YouTube (unlisted) or Google Drive and paste the links here: GitHub limits files to 100 MB.
-Before publishing, check that no video shows a real key, password or personal information.
+**[Open the demo folder](https://drive.google.com/drive/folders/1ugy6qm1S3jihDPcpmooKrwX3YuVfxSbK?usp=sharing)**
+
+| Video | Content |
+|---|---|
+| `DOS.mkv` | Denial-of-service demonstration against the LLM interface (OWASP LLM10, Unbounded Consumption). |
+| `LLM_demo.mp4` | General demonstration of the lab: LLM environment running on Kubernetes and the attack and defense workflow. |
+| `Prompt_Final.mp4` | Prompt-based attacks against the LLM (prompt injection and jailbreak) and the model's behavior. |
+
+All secrets shown in the videos are fake test values.
