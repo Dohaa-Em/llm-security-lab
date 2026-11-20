@@ -132,7 +132,7 @@ kubectl apply -f k8s/target1-llm-native/open-webui.yaml
 
 ## Vidéos de démonstration
 
-Voir [demo/README.md](demo/README.md).
+Regarder les [vidéos de démonstration](https://drive.google.com/drive/folders/1ugy6qm1S3jihDPcpmooKrwX3YuVfxSbK?usp=sharing) ou voir [demo/README.md](demo/README.md).
 
 ## Limites et enseignements
 
